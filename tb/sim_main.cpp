@@ -1,6 +1,5 @@
 #include "Vcore.h"
 #include "verilated.h"
-#include "verilated_vcd_c.h"
 
 #include <memory>
 
