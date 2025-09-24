@@ -15,9 +15,9 @@ module sign_extend(
             2'b01 : // S-type
                 imm_ext = {20{base_imm[24]}, base_imm[24:18], base_imm[4:0]};
             2'b10 : // B-type
-                imm_ext = {20{base_imm[24]}, base_imm[0], base_imm[23:19], base_imm[4:1], 1'b0};
+                imm_ext = {20{base_imm[24]}, base_imm[0], base_imm[23:19], base_imm[4:1], 1'b0}; // 32-bit so need zero
             2'b11 : // J-type
-                imm_ext = {12{base_imm[24]}, base_imm[14:5], base_imm[15], base_imm[23:16]};
+                imm_ext = {12{base_imm[24]}, base_imm[14:5], base_imm[15], base_imm[23:16], 1'b0};
         endcase
     end
 
