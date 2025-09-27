@@ -7,8 +7,6 @@ module decode(
     input logic [4:0] write_destination,
     input logic write_enable,
 
-    input logic source2_control,
-
     output logic [6:0] op,
     output logic [2:0] funct3,
     output logic [6:0] funct7
@@ -27,8 +25,7 @@ module decode(
     assign rs1 = instruction[19:15];
     assign rs2 = instruction[24:20];
     assign source_data1_o = source_data1;
-    assign source_data2_o = source2_control ? source_data2 : extended_imm ; // TODO: mux for immediate based on control signals
-
+    assign source_data2_o = source_data2;
     assign op = instruction[6:0];
     assign funct3 = instruction[14:12];
     assign funct7 = instruction[31:25];
